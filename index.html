@@ -28,8 +28,8 @@
       <nav class="hidden md:flex gap-6 text-sm">
         <a href="#home">Home</a>
         <a href="#products">Products</a>
-        <a href="#order">Order</a>
         <a href="#about">About</a>
+        <a href="#order">Order</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -56,7 +56,7 @@
           <p class="text-sm text-slate-600">Comfort wear</p>
           <div class="flex items-center justify-between mt-4">
             <span class="font-semibold">₹170</span>
-            <a href="#order" class="text-brand-500 hover:underline">Order Now</a>
+            <button onclick="setProduct('Regular Pants (Grey)')" class="text-brand-500 hover:underline">Order Now</button>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
           <p class="text-sm text-slate-600">Comfort wear</p>
           <div class="flex items-center justify-between mt-4">
             <span class="font-semibold">₹170</span>
-            <a href="#order" class="text-brand-500 hover:underline">Order Now</a>
+            <button onclick="setProduct('Regular Pants (Black)')" class="text-brand-500 hover:underline">Order Now</button>
           </div>
         </div>
       </div>
@@ -77,23 +77,30 @@
     </div>
   </section>
 
-  <!-- Order Form -->
-  <section id="order" class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow my-14">
-    <h3 class="text-2xl font-display mb-4">Place Your Order / ऑर्डर करें</h3>
-    <form id="orderForm" class="grid gap-4">
-      <input type="text" id="name" placeholder="Full Name / पूरा नाम" required class="border p-2 rounded">
-      <input type="text" id="phone" placeholder="Phone Number / फ़ोन नंबर" required class="border p-2 rounded">
-      <input type="text" id="address" placeholder="Full Address / पूरा पता" required class="border p-2 rounded">
-      <input type="text" id="pincode" placeholder="Pincode / पिनकोड" required class="border p-2 rounded">
-      <input type="text" id="product" placeholder="Product Name / प्रोडक्ट नाम" required class="border p-2 rounded">
-      <button type="submit" class="bg-brand-500 text-white py-2 rounded-lg">Order Now</button>
-    </form>
-  </section>
-
   <!-- About -->
   <section id="about" class="bg-white max-w-7xl mx-auto px-4 py-14">
     <h3 class="font-display text-2xl md:text-4xl mb-6">About Us / हमारे बारे में</h3>
     <p>RANA BAI DRESS CORNER, Jodhpur Kamla Nehru Nagar – Quality fabrics & trendy outfits at best prices. We provide comfortable regular pants, ethnic & western wear for all occasions.</p>
+  </section>
+
+  <!-- Order Form -->
+  <section id="order" class="bg-white max-w-7xl mx-auto px-4 py-14">
+    <h3 class="font-display text-2xl md:text-4xl mb-6">Place Your Order / ऑर्डर करें</h3>
+    <form id="orderForm" class="grid gap-4 max-w-lg">
+      <input type="text" id="product" name="product" placeholder="Product Name" class="border p-2 rounded" readonly />
+      <select id="size" name="size" class="border p-2 rounded" required>
+        <option value="">Select Size</option>
+        <option value="S">Small (S)</option>
+        <option value="M">Medium (M)</option>
+        <option value="L">Large (L)</option>
+        <option value="XL">Extra Large (XL)</option>
+      </select>
+      <input type="text" id="name" name="name" placeholder="Full Name" class="border p-2 rounded" required />
+      <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="border p-2 rounded" required />
+      <input type="text" id="address" name="address" placeholder="Full Address" class="border p-2 rounded" required />
+      <input type="text" id="pincode" name="pincode" placeholder="Pincode" class="border p-2 rounded" required />
+      <button type="submit" class="bg-brand-500 text-white py-2 px-4 rounded">Order Now</button>
+    </form>
   </section>
 
   <!-- Contact -->
@@ -110,20 +117,25 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    function setProduct(name) {
+      document.getElementById('product').value = name;
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+    }
 
-    // WhatsApp Order Form
-    document.getElementById("orderForm").addEventListener("submit", function(e){
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      let name = document.getElementById("name").value;
-      let phone = document.getElementById("phone").value;
-      let address = document.getElementById("address").value;
-      let pincode = document.getElementById("pincode").value;
-      let product = document.getElementById("product").value;
-      
-      let message = `New Order:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0APincode: ${pincode}%0AProduct: ${product}`;
-      window.open(`https://wa.me/918072538028?text=${message}`, "_blank");
+      const product = document.getElementById('product').value;
+      const size = document.getElementById('size').value;
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const pincode = document.getElementById('pincode').value;
+
+      const message = `New Order:%0AProduct: ${product}%0ASize: ${size}%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0APincode: ${pincode}`;
+      window.open(`https://wa.me/918072538028?text=${message}`, '_blank');
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
