@@ -10,15 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins'], display: ['Playfair Display'] }, colors: { brand: { 500: '#3b46ff' } } } } }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    html { scroll-behavior: smooth; }
     :root { --radius: 1.25rem; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .glass { backdrop-filter: blur(9px); background: rgba(15, 23, 42, 0.55); }
+    .card { border-radius: var(--radius); }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
-
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-4">
@@ -26,6 +28,7 @@
       <nav class="hidden md:flex gap-6 text-sm">
         <a href="#home">Home</a>
         <a href="#products">Products</a>
+        <a href="#order">Order</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -33,7 +36,7 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="h-[60vh] bg-slate-900 text-white grid place-items-center fade-in">
+  <section id="home" class="h-[60vh] bg-slate-900 text-white grid place-items-center">
     <div class="text-center">
       <h2 class="font-display text-4xl">RANA BAI DRESS CORNER</h2>
       <p class="mt-2">Ethnic & Western Wear | एथनिक और वेस्टर्न वियर</p>
@@ -41,52 +44,64 @@
   </section>
 
   <!-- Products -->
-  <section id="products" class="max-w-7xl mx-auto px-4 py-14 fade-in">
+  <section id="products" class="max-w-7xl mx-auto px-4 py-14">
     <h3 class="font-display text-2xl md:text-4xl mb-8">Products / प्रोडक्ट्स</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Example Product -->
+      <!-- Product 1 -->
       <div class="bg-white card shadow overflow-hidden">
         <img class="w-full h-64 object-cover" src="https://i.postimg.cc/mkC71cKc/rana.jpg" alt="Regular Pants Grey" />
         <div class="p-5">
           <h4 class="font-medium">Regular Pants (Grey)</h4>
           <p class="text-sm text-slate-600">Comfort wear</p>
-          <div class="flex items-center justify-between mt-4 gap-2">
-            <a href="https://wa.me/918072538028?text=I%20want%20Regular%20Pants%20Grey" target="_blank"
-               class="flex-1 text-center bg-blue-600 text-white px-3 py-2 rounded-lg">Enquire</a>
-            <a href="https://wa.me/918072538028?text=I%20want%20to%20place%20an%20order%20for%20Regular%20Pants%20Grey" target="_blank"
-               class="flex-1 text-center bg-green-600 text-white px-3 py-2 rounded-lg">Buy Now</a>
+          <div class="flex items-center justify-between mt-4">
+            <span class="font-semibold">₹170</span>
+            <a href="#order" class="text-brand-500 hover:underline">Order Now</a>
           </div>
         </div>
       </div>
-<!-- Product 3 -->
-<div class="bg-white card shadow overflow-hidden">
-  <img class="w-full h-64 object-cover" src="https://i.postimg.cc/XYZIMAGE.jpg" alt="Regular Pants red" />
-  <div class="p-5">
-    <h4 class="font-medium">Regular Pants (Blue)</h4>
-    <p class="text-sm text-slate-344">Comfort wear</p>
-    <div class="flex items-center justify-between mt-4">
-      <span class="font-semibold">₹1770</span>
-      <a href="https://wa.me/918072538028?text=I%20want%20Regular%20Pants%20Blue" target="_blank" class="text-brand-500 hover:underline">Enquire</a>
-    </div>
-  </div>
-</div>
+
+      <!-- Product 2 -->
+      <div class="bg-white card shadow overflow-hidden">
+        <img class="w-full h-64 object-cover" src="https://i.postimg.cc/jS0thDmx/Screenshot-2025-09-02-234942.jpg" alt="Regular Pants Black" />
+        <div class="p-5">
+          <h4 class="font-medium">Regular Pants (Black)</h4>
+          <p class="text-sm text-slate-600">Comfort wear</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="font-semibold">₹170</span>
+            <a href="#order" class="text-brand-500 hover:underline">Order Now</a>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
 
+  <!-- Order Form -->
+  <section id="order" class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow my-14">
+    <h3 class="text-2xl font-display mb-4">Place Your Order / ऑर्डर करें</h3>
+    <form id="orderForm" class="grid gap-4">
+      <input type="text" id="name" placeholder="Full Name / पूरा नाम" required class="border p-2 rounded">
+      <input type="text" id="phone" placeholder="Phone Number / फ़ोन नंबर" required class="border p-2 rounded">
+      <input type="text" id="address" placeholder="Full Address / पूरा पता" required class="border p-2 rounded">
+      <input type="text" id="pincode" placeholder="Pincode / पिनकोड" required class="border p-2 rounded">
+      <input type="text" id="product" placeholder="Product Name / प्रोडक्ट नाम" required class="border p-2 rounded">
+      <button type="submit" class="bg-brand-500 text-white py-2 rounded-lg">Order Now</button>
+    </form>
+  </section>
+
   <!-- About -->
-  <section id="about" class="bg-white max-w-7xl mx-auto px-4 py-14 fade-in">
+  <section id="about" class="bg-white max-w-7xl mx-auto px-4 py-14">
     <h3 class="font-display text-2xl md:text-4xl mb-6">About Us / हमारे बारे में</h3>
     <p>RANA BAI DRESS CORNER, Jodhpur Kamla Nehru Nagar – Quality fabrics & trendy outfits at best prices. We provide comfortable regular pants, ethnic & western wear for all occasions.</p>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-slate-50 max-w-7xl mx-auto px-4 py-14 fade-in">
+  <section id="contact" class="bg-slate-50 max-w-7xl mx-auto px-4 py-14">
     <h3 class="font-display text-2xl md:text-4xl mb-6">Contact / संपर्क</h3>
-    <p>📞 Phone: <a href="tel:+918072538028">+91 8072538028</a></p>
-    <p>💬 WhatsApp: <a href="https://wa.me/918072538028" target="_blank">Chat Now</a></p>
-    <p>📍 Address: Jodhpur, Kamla Nehru Nagar</p>
+    <p><i class="fa-solid fa-phone mr-2"></i> Phone: <a href="tel:+918072538028">+91 8072538028</a></p>
+    <p><i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp: <a href="https://wa.me/918072538028" target="_blank">Chat Now</a></p>
+    <p><i class="fa-solid fa-location-dot mr-2"></i> Address: Jodhpur, Kamla Nehru Nagar</p>
   </section>
 
   <!-- Footer -->
@@ -96,13 +111,19 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const faders = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    faders.forEach(fade => observer.observe(fade));
+
+    // WhatsApp Order Form
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let address = document.getElementById("address").value;
+      let pincode = document.getElementById("pincode").value;
+      let product = document.getElementById("product").value;
+      
+      let message = `New Order:%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0APincode: ${pincode}%0AProduct: ${product}`;
+      window.open(`https://wa.me/918072538028?text=${message}`, "_blank");
+    });
   </script>
 </body>
 </html>
