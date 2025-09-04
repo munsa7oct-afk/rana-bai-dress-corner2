@@ -1,47 +1,115 @@
-<!-- Products -->
-<section id="products" class="max-w-7xl mx-auto px-4 py-14">
-  <h3 class="font-display text-2xl md:text-4xl mb-8">Products / प्रोडक्ट्स</h3>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RANA BAI DRESS CORNER</title>
+  <meta name="description" content="RANA BAI DRESS CORNER – Trendy ethnic & western wear. Quality fabrics at honest prices. Shop local, look stylish." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins'], display: ['Playfair Display'] }, colors: { brand: { 500: '#3b46ff' } } } } }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root { --radius: 1.25rem; }
+    .glass { backdrop-filter: blur(9px); background: rgba(15, 23, 42, 0.55); }
+    .card { border-radius: var(--radius); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-4">
+      <h1 class="font-display text-xl">RANA BAI DRESS CORNER</h1>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Product 1 -->
-    <div class="bg-white card shadow overflow-hidden">
-      <img class="w-full h-64 object-cover" src="https://i.postimg.cc/mkC71cKc/rana.jpg" alt="Regular Pants Grey" />
-      <div class="p-5">
-        <h4 class="font-medium">Regular Pants (Grey)</h4>
-        <p class="text-sm text-slate-600">Comfort wear</p>
-        <div class="flex items-center justify-between mt-4">
-          <span class="font-semibold">₹170</span>
-          <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Regular Pants (Grey)">Order Now</button>
+  <!-- Hero -->
+  <section id="home" class="h-[60vh] bg-slate-900 text-white grid place-items-center">
+    <div class="text-center">
+      <h2 class="font-display text-4xl">RANA BAI DRESS CORNER</h2>
+      <p class="mt-2">Ethnic & Western Wear | एथनिक और वेस्टर्न वियर</p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="max-w-7xl mx-auto px-4 py-14">
+    <h3 class="font-display text-2xl md:text-4xl mb-8">Products / प्रोडक्ट्स</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Product 1 -->
+      <div class="bg-white card shadow overflow-hidden">
+        <img class="w-full h-64 object-cover" src="https://i.postimg.cc/mkC71cKc/rana.jpg" alt="Regular Pants Grey" />
+        <div class="p-5">
+          <h4 class="font-medium">Regular Pants (Grey)</h4>
+          <p class="text-sm text-slate-600">Comfort wear</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="font-semibold">₹170</span>
+            <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Regular Pants (Grey)">Order Now</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Product 2 -->
-    <div class="bg-white card shadow overflow-hidden">
-      <img class="w-full h-64 object-cover" src="https://i.postimg.cc/jS0thDmx/Screenshot-2025-09-02-234942.jpg" alt="Regular Pants Black" />
-      <div class="p-5">
-        <h4 class="font-medium">Regular Pants (Black)</h4>
-        <p class="text-sm text-slate-600">Comfort wear</p>
-        <div class="flex items-center justify-between mt-4">
-          <span class="font-semibold">₹170</span>
-          <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Regular Pants (Black)">Order Now</button>
+      <!-- Product 2 -->
+      <div class="bg-white card shadow overflow-hidden">
+        <img class="w-full h-64 object-cover" src="https://i.postimg.cc/jS0thDmx/Screenshot-2025-09-02-234942.jpg" alt="Regular Pants Black" />
+        <div class="p-5">
+          <h4 class="font-medium">Regular Pants (Black)</h4>
+          <p class="text-sm text-slate-600">Comfort wear</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="font-semibold">₹165</span>
+            <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Regular Pants (Black)">Order Now</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Product 3 (Demo: Stylish Kurti) -->
-    <div class="bg-white card shadow overflow-hidden">
-      <img class="w-full h-64 object-cover" src="https://i.postimg.cc/7ZFtN6m7/kurti.jpg" alt="Stylish Kurti Red" />
-      <div class="p-5">
-        <h4 class="font-medium">Stylish Kurti (Red)</h4>
-        <p class="text-sm text-slate-600">Trendy & Comfortable</p>
-        <div class="flex items-center justify-between mt-4">
-          <span class="font-semibold">₹250</span>
-          <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Stylish Kurti (Red)">Order Now</button>
+      <!-- Product 3 -->
+      <div class="bg-white card shadow overflow-hidden">
+        <img class="w-full h-64 object-cover" src="https://i.postimg.cc/7ZFtN6m7/kurti.jpg" alt="Stylish Kurti Red" />
+        <div class="p-5">
+          <h4 class="font-medium">Stylish tshirt (Red)</h4>
+          <p class="text-sm text-slate-600">Trendy & Comfortable</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="font-semibold">₹250</span>
+            <button class="order-btn text-white bg-brand-500 px-3 py-1 rounded" data-product="Stylish Kurti (Red)">Order Now</button>
+          </div>
         </div>
       </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- About -->
+  <section id="about" class="bg-white max-w-7xl mx-auto px-4 py-14">
+    <h3 class="font-display text-2xl md:text-4xl mb-6">About Us / हमारे बारे में</h3>
+    <p>RANA BAI DRESS CORNER, Jodhpur Kamla Nehru Nagar – Quality fabrics & trendy outfits at best prices. We provide comfortable regular pants, ethnic & western wear for all occasions.</p>
+  </section>
 
+  <!-- Contact -->
+  <section id="contact" class="bg-slate-50 max-w-7xl mx-auto px-4 py-14">
+    <h3 class="font-display text-2xl md:text-4xl mb-6">Contact / संपर्क</h3>
+    <p><i class="fa-solid fa-phone mr-2"></i> Phone: <a href="tel:+918072538028">+91 8072538028</a></p>
+    <p><i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp: <a href="https://wa.me/918072538028" target="_blank">Chat Now</a></p>
+    <p><i class="fa-solid fa-location-dot mr-2"></i> Address: Jodhpur, Kamla Nehru Nagar</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-6 text-center">
+    <p>© <span id="year"></span> RANA BAI DRESS CORNER. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
